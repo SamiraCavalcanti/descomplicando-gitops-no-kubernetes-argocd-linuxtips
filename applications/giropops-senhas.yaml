@@ -8,7 +8,7 @@ spec:
   source:
     helm: {}
     repoURL: 'https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git'
-    targetRevision: feat/day-2
+    targetRevision: feat/day2
     path: 'giropops-senhas/helm'
   destination:
     server: 'https://kubernetes.default.svc'
