@@ -13,6 +13,4 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: giropops-senhas
-  syncPolicy:
-    automated: {}
-      
+  syncPolicy: {}      
