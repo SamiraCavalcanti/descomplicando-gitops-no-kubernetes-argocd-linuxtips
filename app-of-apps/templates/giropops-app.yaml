@@ -9,7 +9,7 @@ spec:
     helm: {}
     repoURL: 'https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git'
     targetRevision: feat/day2
-    path: 'giropops-senhas/helm'
+    path: giropops-senhas/helm
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: giropops-senhas

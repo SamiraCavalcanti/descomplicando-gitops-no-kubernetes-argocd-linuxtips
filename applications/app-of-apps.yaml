@@ -1,18 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: random-logger
+  name: app-of-apps
   namespace: argocd
 spec:
   project: default
   source:
-    helm: {}
     repoURL: 'https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git'
     targetRevision: feat/day2
-    path: random-logger/helm
+    path: app-of-apps
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: random-logger
+    namespace: argocd
   syncPolicy: 
     automated: {
       selfHeal: true
