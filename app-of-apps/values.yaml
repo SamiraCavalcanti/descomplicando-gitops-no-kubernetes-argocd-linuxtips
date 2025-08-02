@@ -1,5 +1,5 @@
 argocd:
 giropopsSenahas:
   enabled: false
-randomLoger:
+randomLogger:
   enabled: false
