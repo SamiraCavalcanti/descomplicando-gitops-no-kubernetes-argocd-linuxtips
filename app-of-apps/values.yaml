@@ -1,5 +1,5 @@
 argocd:
-giropopsSenahas:
+giropopsSenhas:
   enabled: false
 randomLogger:
   enabled: false
