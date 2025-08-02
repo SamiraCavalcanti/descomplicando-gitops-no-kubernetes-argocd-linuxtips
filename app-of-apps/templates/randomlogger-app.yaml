@@ -1,4 +1,4 @@
-{(- if .Values.argo.randomLogger.enabled)}
+{{- if .Values.argocd.randomLogger.enabled -}}
 
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -21,4 +21,4 @@ spec:
     }
     syncOptions:
       - CreateNamespace=true
-{(- end)}
+{{- end }}
