@@ -7,7 +7,10 @@ metadata:
 spec:
   project: default
   source:
-    helm: {}
+    helm:
+      parameters:
+        - name: replicas
+          value: '{{ .Values.argocd.giropopsSenhas.replicas }}'
     repoURL: 'https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git'
     targetRevision: feat/day2
     path: giropops-senhas/helm
