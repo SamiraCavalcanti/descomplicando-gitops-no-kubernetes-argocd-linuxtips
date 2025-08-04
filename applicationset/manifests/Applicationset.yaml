@@ -11,7 +11,7 @@ spec:
       repoURL: https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git
       revision: feat/day3
       directories:
-      - path: applicationset/applicationset/apps/*/helm
+      - path: applicationset/apps/*/helm
   template:
     metadata:
       name: '{{index .path.segments 2}}'
