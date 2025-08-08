@@ -8,17 +8,13 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - pullRequest:
-       github:
-          owner: SamiraCavalcanti
-          repo: descomplicando-gitops-no-kubernetes-argocd-linuxtips
-          tokenRef:
-            name: secret-token-github
-            key: token
-        requeueAfterSeconds: 60
-      repoURL: https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git
-      revision: feat/day3
-      directories:
-      - path: applicationset/apps/*/helm
+      github:
+        owner: SamiraCavalcanti
+        repo: descomplicando-gitops-no-kubernetes-argocd-linuxtips
+        tokenRef:
+          secretName: secret-token-github
+          key: token
+      requeueAfterSeconds: 60
   template:
     metadata:
       name: stack-apps-{{branch_slug}}-{{number}}
