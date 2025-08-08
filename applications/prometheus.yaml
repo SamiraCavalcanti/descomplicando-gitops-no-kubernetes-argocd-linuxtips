@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-app
+  namespace: argocd
+
+spec:
+  project: default
+  source:
+    repoURL: 'https://prometheus-community.github.io/helm-charts'
+    chart: prometheus
+    targetRevision: 15.7.1
+    helm:
+      values: |
+        server:
+          service:
+            type: ClusterIP
+        alertmanager:
+          enabled: false
+        kubeStateMetrics:
+          enabled: true
+        nodeExporter:
+          enabled: true
+        pushgateway:
+          enabled: false
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: prometheus
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
