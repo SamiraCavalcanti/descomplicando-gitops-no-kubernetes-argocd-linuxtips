@@ -8,19 +8,19 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - matrix:
-  - git:
-      repoURL: https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git
-      revision: feat/day3
-      directories:
-      - path: applicationset/apps/*/helm
-   - git:
-      repoURL: https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git
-      revision: feat/day3
-      pathParamePrefix: cgf
-      files:
-        - path: applicationset/configs/dev.json
-
- template:
+      generators:
+      - git:
+          repoURL: https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git
+          revision: feat/day3
+          directories:
+          - path: applicationset/apps/*/helm
+      - git:
+          repoURL: https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git
+          revision: feat/day3
+          pathParamPrefix: cgf
+          files:
+            - path: applicationset/configs/dev.json
+  template:
     metadata:
       name: '{{index .path.segments 2}}-{{.cluster.nome}}'
     spec:
