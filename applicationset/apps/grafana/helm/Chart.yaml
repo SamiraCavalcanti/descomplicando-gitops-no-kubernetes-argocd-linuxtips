@@ -1,4 +1,4 @@
-apiVersin: v2
+apiVersion: v2
 name: grafana
 description: A helm chart for grafana
 version: 0.1.0

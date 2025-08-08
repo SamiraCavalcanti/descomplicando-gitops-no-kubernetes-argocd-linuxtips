@@ -1,0 +1,41 @@
+# Ignore files containing sensitive information
+SecretToken.yaml
+**/SecretToken.yaml
+
+# Ignore other sensitive files
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+**/secrets/
+
+# Ignore environment files
+.env
+.env.local
+.env.production
+.env.staging
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*~
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
