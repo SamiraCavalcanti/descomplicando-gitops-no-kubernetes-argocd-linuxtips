@@ -15,16 +15,22 @@ spec:
       requeueAfterSeconds: 60
   template:
     metadata:
-      name: 'pr-{{.number}}-{{.head_short_sha}}'
+      name: 'stack-apps-{{branch_slug}}-{{number}}'
     spec:
       project: default
       source:
         repoURL: https://github.com/SamiraCavalcanti/descomplicando-gitops-no-kubernetes-argocd-linuxtips.git
-        targetRevision: '{{.head_sha}}'
+        targetRevision: '{{head_sha}}'
         path: app-of-apps/
+        helm:
+          parameters:
+            - name: argocd.giropopsSenhas.enabled
+              value: 'true'
+            - name: argocd.randomLogger.enabled
+              value: 'true'
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'pr-{{.number}}'
+        namespace: stack-apps-{{branch_slug}}-{{number}}
       syncPolicy:
         automated: {}
         syncOptions:
