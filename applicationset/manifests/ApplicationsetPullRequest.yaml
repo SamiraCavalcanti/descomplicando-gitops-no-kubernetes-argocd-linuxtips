@@ -15,7 +15,7 @@ spec:
       requeueAfterSeconds: 60
   template:
     metadata:
-      name: 'stack-apps-{{.branch_slug}}-{{.number}}'
+      name: 'pr-{{.number}}-{{.head_short_sha}}'
     spec:
       project: default
       source:
@@ -24,7 +24,7 @@ spec:
         path: app-of-apps/
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'app-of-apps-{{.branch_slug}}-{{.number}}'
+        namespace: 'pr-{{.number}}'
       syncPolicy:
         automated: {}
         syncOptions:
